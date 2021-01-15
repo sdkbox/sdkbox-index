@@ -83,7 +83,7 @@ const prTest = async function(require, github, context, core) {
 
 module.exports = async ({github, context, core, io}) => {
     try {
-        console.log(this.arguments)
+        console.log(arguments)
         prTest(github, context, core);
     } catch (error) {
         core.setFailed(error.message);
