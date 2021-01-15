@@ -16,4 +16,4 @@ jobs:
         with:
           script: |
             const test = require(`${process.env.GITHUB_WORKSPACE}/scripts/pr_test.js`);
-            await test({github, context, core, io});
+            await test(github, context, core, io);

@@ -81,7 +81,7 @@ const prTest = async function(require, github, context, core) {
     }
 }
 
-module.exports = async ({github, context, core, io}) => {
+const test = async function(github, context, core, io) {
     try {
         console.log(arguments)
         await prTest(github, context, core);
@@ -89,3 +89,5 @@ module.exports = async ({github, context, core, io}) => {
         core.setFailed(error.message);
     }
 }
+
+module.exports = test;
