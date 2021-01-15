@@ -40,8 +40,8 @@ const prTest = async function(github, context, core) {
         core.setFailed(`The base and head commits are missing from the payload for this ${context.eventName} event.`)
     }
 
-    core.debug(context.repo);
-    core.debug({
+    core.info(context.repo);
+    core.info({
         baseSHA,
         headSHA,
         owner: context.repo.owner,
@@ -56,7 +56,7 @@ const prTest = async function(github, context, core) {
         repo: context.repo.repo
     })
 
-    core.debug(response);
+    core.info(response);
     // Ensure that the request was successful.
     if (response.status !== 200) {
         core.setFailed(
