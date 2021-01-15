@@ -40,9 +40,10 @@ const prTest = async function(github, context, core) {
         core.setFailed(`The base and head commits are missing from the payload for this ${context.eventName} event.`)
     }
 
+    const client = new github(github.token);
     // Use GitHub's compare two commits API.
     // https://developer.github.com/v3/repos/commits/#compare-two-commits
-    const response = await github.repos.compareCommits({
+    const response = await client.repos.compareCommits({
         baseSHA,
         headSHA,
         owner: context.repo.owner,
