@@ -27,7 +27,7 @@ const isPathMatchName = function(pluginPath, pluginName) {
     return shaa === shab;
 }
 
-const prTest = function(require, github, context, core) {
+const prTest = async function(require, github, context, core) {
     let baseSHA = null;
     let headSHA = null;
 
