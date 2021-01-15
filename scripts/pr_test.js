@@ -79,7 +79,7 @@ const prTest = function(require, github, context, core) {
     }
 }
 
-module.exports = ({github, context, core, io}) => {
+module.exports = async ({github, context, core, io}) => {
     try {
         prTest(github, context, core);
     } catch (error) {
