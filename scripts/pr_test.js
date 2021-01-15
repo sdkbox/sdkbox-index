@@ -49,6 +49,7 @@ const prTest = async function(github, context, core) {
         repo: context.repo.repo
     })
 
+    core.debug(response);
     // Ensure that the request was successful.
     if (response.status !== 200) {
         core.setFailed(
