@@ -27,7 +27,7 @@ const isPathMatchName = function(pluginPath, pluginName) {
     return shaa === shab;
 }
 
-const prTest = function(require, github, context, core) {
+const prTest = async function(github, context, core) {
     let baseSHA = null;
     let headSHA = null;
 
@@ -40,15 +40,23 @@ const prTest = function(require, github, context, core) {
         core.setFailed(`The base and head commits are missing from the payload for this ${context.eventName} event.`)
     }
 
+    console.log(context.repo);
+    console.log({
+        baseSHA,
+        headSHA,
+        owner: context.repo.owner,
+        repo: context.repo.repo
+    });
     // Use GitHub's compare two commits API.
     // https://developer.github.com/v3/repos/commits/#compare-two-commits
-    const response = await client.repos.compareCommits({
+    const response = await github.repos.compareCommits({
         baseSHA,
         headSHA,
         owner: context.repo.owner,
         repo: context.repo.repo
     })
 
+    core.info(response);
     // Ensure that the request was successful.
     if (response.status !== 200) {
         core.setFailed(
@@ -79,10 +87,12 @@ const prTest = function(require, github, context, core) {
     }
 }
 
-module.exports = ({github, context, core, io}) => {
+const test = async function(github, context, core, io) {
     try {
-        prTest(github, context, core);
+        await prTest(github, context, core);
     } catch (error) {
         core.setFailed(error.message);
     }
 }
+
+module.exports = test;

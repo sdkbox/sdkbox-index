@@ -1,4 +1,4 @@
-name: Go
+name: Test
 
 on: pull_request
 
@@ -15,5 +15,5 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-            const test = require(`${process.env.GITHUB_WORKSPACE}/scripts/pr_test.js`)
-            test({github, context, core, io})
+            const test = require(`${process.env.GITHUB_WORKSPACE}/scripts/pr_test.js`);
+            await test(github, context, core, io);
