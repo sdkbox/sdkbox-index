@@ -27,12 +27,10 @@ const isPathMatchName = function(pluginPath, pluginName) {
     return shaa === shab;
 }
 
-const prTest = async function(require, github, context, core) {
+const prTest = async function(github, context, core) {
     let baseSHA = null;
     let headSHA = null;
 
-    core.debug(github)
-    core.debug(context)
     if (context.payload.pull_request) {
         baseSHA = context.payload.pull_request.base ? context.payload.pull_request.base.sha : ""
         headSHA = context.payload.pull_request.head ? context.payload.pull_request.head.sha : ""
@@ -83,7 +81,6 @@ const prTest = async function(require, github, context, core) {
 
 const test = async function(github, context, core, io) {
     try {
-        console.log(arguments)
         await prTest(github, context, core);
     } catch (error) {
         core.setFailed(error.message);
