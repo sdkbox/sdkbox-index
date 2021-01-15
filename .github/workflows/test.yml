@@ -1,0 +1,19 @@
+name: Go
+
+on: pull_request
+
+jobs:
+
+  pr_test:
+    name: PR test
+    runs-on: ubuntu-18.04
+    steps:
+      - name: check out repo
+        uses: actions/checkout@v2
+
+      - name: pr check
+        uses: actions/github-script@v3
+        with:
+          script: |
+            const test = require(`${process.env.GITHUB_WORKSPACE}/scripts/pr_test.js`)
+            test({github, context, core, io})
