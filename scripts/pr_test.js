@@ -42,7 +42,7 @@ const prTest = async function(github, context, core) {
 
     // Use GitHub's compare two commits API.
     // https://developer.github.com/v3/repos/commits/#compare-two-commits
-    const response = await client.repos.compareCommits({
+    const response = await github.repos.compareCommits({
         baseSHA,
         headSHA,
         owner: context.repo.owner,
