@@ -1,0 +1,39 @@
+{
+    "author": "hugo",
+    "binary": "https://github.com/sdkbox/storage/raw/master/plugins/AppsFlyer.zip",
+    "dependencies": {
+        "Bridge": "0.0.1"
+    },
+    "description": "sdkbox plugin for appsflyer",
+    "libraries": {
+        "android": {
+            "deps": [
+                "implementation 'com.appsflyer:af-android-sdk:6.0.0'",
+                "implementation 'com.android.installreferrer:installreferrer:1.1'"
+            ],
+            "libs": [
+                "android/libs/PluginAppsFlyer-release.aar"
+            ],
+            "plugin": {
+                "class": "com.sdkbox.bb.bridge.plugin.appsflyer.PluginAppsFlyer",
+                "name": "AppsFlyer"
+            }
+        },
+        "ios": {
+            "deps": [
+                "AdSupport.framework",
+                "iAd.framework"
+            ],
+            "libs": [
+                "ios/AppsFlyer.xcframework",
+                "ios/AppsFlyerLib.framework"
+            ],
+            "plugin": {
+                "class": "BBPluginAppsFlyer",
+                "name": "AppsFlyer"
+            }
+        }
+    },
+    "name": "appsflyer",
+    "version": "0.0.1"
+}
