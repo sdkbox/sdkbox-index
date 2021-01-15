@@ -16,4 +16,6 @@ jobs:
         with:
           script: |
             const test = require(`${process.env.GITHUB_WORKSPACE}/scripts/pr_test.js`);
-            test({github, context, core, io});
+            const arg = {github, context, core, io};
+            console.log(arg);
+            test(arg);
