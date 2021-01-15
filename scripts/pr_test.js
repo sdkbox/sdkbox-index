@@ -31,6 +31,8 @@ const prTest = async function(require, github, context, core) {
     let baseSHA = null;
     let headSHA = null;
 
+    core.debug(github)
+    core.debug(context)
     if (context.payload.pull_request) {
         baseSHA = context.payload.pull_request.base ? context.payload.pull_request.base.sha : ""
         headSHA = context.payload.pull_request.head ? context.payload.pull_request.head.sha : ""
