@@ -2,7 +2,7 @@
     "author": "hugo",
     "binary": "https://github.com/sdkbox/storage/raw/master/plugins/AppsFlyer.zip",
     "dependencies": {
-        "Bridge": "0.0.1"
+        "Bridge": "0.0.6"
     },
     "description": "sdkbox plugin for appsflyer",
     "libraries": {
