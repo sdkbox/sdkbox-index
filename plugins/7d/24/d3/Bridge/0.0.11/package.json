@@ -1,0 +1,27 @@
+{
+    "author": "hugo",
+    "authors": {
+        "hugo": "hugohuang1111@gmail.com"
+    },
+    "binary": "https://github.com/sdkbox/storage/raw/master/plugins/Bridge.zip",
+    "description": "sdkbox bridge",
+    "homepage": "https://www.sdkbox.com/",
+    "libraries": {
+        "android": {
+            "jni": [
+                "android/jni/Bridge"
+            ],
+            "libs": [
+                "android/libs/Bridge-release.aar"
+            ]
+        },
+        "ios": {
+            "libs": [
+                "ios/Bridge.xcframework"
+            ]
+        }
+    },
+    "name": "Bridge",
+    "organization": "SDKBox",
+    "version": "0.0.11"
+}
