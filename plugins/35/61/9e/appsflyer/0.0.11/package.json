@@ -1,6 +1,6 @@
 {
     "author": "hugo",
-    "binary": "https://github.com/sdkbox/storage/raw/master/plugins/AppsFlyer.zip",
+    "binary": "https://github.com/hugohuang1111/sdkbox-plugin-appsflyer/releases/download/v0.0.11/AppsFlyer.zip",
     "dependencies": {
         "Bridge": "0.0.11"
     },
